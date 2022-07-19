@@ -1,0 +1,26 @@
+h1 {
+  text-align: center;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  vertical-align: text-top;
+}
+
+.headerTable {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.instructionsTable {
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+
+.right {
+  text-align: right;
+}

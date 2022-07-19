@@ -2,33 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>timdoodle Home Page</title>
     <style>
       .entry {
-      text-align: center;
+        text-align: center;
       }
       .red {
-      color: red;
-      font-weight: bold;
+        color: red;
+        font-weight: bold;
+      }
+      ol.paren {
+        list-style-type: none;
+      }
+
+      li.paren:before {
+        content: "(" counter(section) ") ";
+      }
+
+      li.paren {
+        counter-increment: section;
       }
     </style>
   </head>
   <body>
-    <dl>
-      <dt><b>timdoodle</b></dt>
-      <dd>(1) A silly fellow. <i>Cornwall</i>.<sup>1</sup><br>
-        (2) A foolish person.<sup>2</sup>
-      </dd>
-    </dl>
-    <p><sup>1</sup> p. 875, Halliwell, James Orchard, <i>Dictionary of Archaic Words</i>,
-      (Originally published in 1850 by John Russell Smith, London)
-      Bracken Books an imprint of Bestseller Publications Ltd,
-      Princess House, 50 Eastcastle Street, London, W1N&nbsp;7AP, England,
-      ISBN&nbsp;1&nbsp;85170&nbsp;261&nbsp;X, 1989.
-    </p>
-    <p><sup>2</sup> <a href="http://homepages.rootsweb.com/~marcie/kernow/language.html">A Dictionary of Cornish Dialect</a>
-      from <i>Memories of a Long and Happy Life</i>, Fred Ivey, November 1996.
-    </p>
-    <p class=entry><a class=red href="index2.html">Enter Web Site Here</a></p>
+    <p class=entry><a class=red href="index2.html">Enter Web Site</a></p>
+    <hr>
+    <p>timdoodle</p>
+    <ol class=paren>
+      <li class=paren>A silly fellow. <em>Cornwall</em>.
+        <a id="fn-1-ref" href="#fn-1"><sup>1</sup></a></li>
+      <li class=paren>A foolish person.
+        <a id="fn-2-ref" href="#fn-2"><sup>2</sup></a></li>
+    </ol>
+    <hr>
+    <ol>
+      <li id="fn-1">p. 875, Halliwell, James Orchard, <i>Dictionary of Archaic Words</i>,
+        (Originally published in 1850 by John Russell Smith, London)
+        Bracken Books an imprint of Bestseller Publications Ltd,
+        Princess House, 50 Eastcastle Street, London, W1N&nbsp;7AP, England,
+        ISBN&nbsp;1&nbsp;85170&nbsp;261&nbsp;X, 1989.
+        <a href="#fn-1-ref" aria-label="Return to footnote 1 referring content.">&crarr;</a>
+      </li>
+      <li id="fn-2"><a href="http://homepages.rootsweb.com/~marcie/kernow/language.html">A Dictionary of Cornish Dialect</a>
+        from <i>Memories of a Long and Happy Life</i>, Fred Ivey, November 1996.
+        <a href="#fn-2-ref" aria-label="Return to footnote 2 referring content.">&crarr;</a>
+      </li>
+    <ol>
   </body>
 </html>

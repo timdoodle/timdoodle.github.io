@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Caesar Cipher</title>
+    <meta name="description" content="Calculate the Caesar Cipher of English text.">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" href="images/icons8-detective-flaticons-flat-16.png" sizes="16x16">
+	<link rel="icon" href="images/icons8-detective-flaticons-flat-32.png" sizes="32x32">
+	<link rel="icon" href="images/icons8-detective-flaticons-flat-96.png" sizes="96x96">
+    <style>
+        h1 {
+            text-align: center;
+        }
+        textarea {
+            width: 99%;
+        }
+        step {
+            font-size: medium;
+        }
+        .slider-width {
+            width: 100%;
+        }
+		#outer {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+        .box {
+            text-align: center;
+            border: 3px solid black;
+  </style>
+  <script>
+    function resizeWindow() {
+      window.resizeTo(500, 650);
+    }
+    
+    function convertText() {
+        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var caesarCypherKey = parseInt(document.getElementById("caesarCipherKey").value, 10);
+        var inputText = document.getElementById("inputMessage").value;
+        var outputText = "";
+        var inputChar = "";
+        
+        for (i = 0; i < inputText.length; i += 1) {
+            inputChar = inputText.charAt(i);
+            if (inputChar == " ") {
+                result = inputChar;
+            } else {
+                result = alphabet.charAt(alphabet.indexOf(inputChar) + caesarCypherKey);
+            }
+            outputText += result;
+        }
+        
+        document.getElementById("outputMessage").value = outputText;
+    }
+  </script>
+</head>
+
+<body onload="resizeWindow();">
+<h1>The Caesar Cipher</h1>
+<p class="step">Step 1: Enter the message to code / decode (Capital letters only):</p>
+<textarea id="inputMessage" name="inputMessage" rows="6"
+    oninput="this.value = this.value.replace(/[^A-Z ]/, '');">
+</textarea>
+<p class="step">Step 2: Select the shift for the Caesar Cipher:</p>
+<p>Drag the blue dot left or right to change the value of the shift.</p>
+<div id="outer" >
+    <output id="caesarCipherKey" class="box">0</output>
+</div>
+<div>
+    <input class="slider-width" type="range" value="0" min="0" max="25"
+           oninput="document.getElementById('caesarCipherKey').value = this.value">
+</div>
+<p class="step">Step 3: Press the button!</p>
+<button type="button" onclick="convertText();">Code / Decode</button>
+
+<p class="step">Step 4: Your coded / decoded message is:</p>
+<textarea id="outputMessage" name="outputMessage" rows="6" readonly></textarea>
+</body>
+</html>

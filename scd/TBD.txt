@@ -1,0 +1,4 @@
+========== TBD
+wrap/nowrap on <td>: nowrap on Bars & spacer columns; wrap on Directions column
+"proper" <table> structure: <th>, <tbody>, valign=top, etc.
+Format file
